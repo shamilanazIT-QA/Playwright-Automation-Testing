@@ -1,7 +1,5 @@
-[![Playwright Tests](https://github.com/shamilanazIT-QA/Playwright-Automation-Testing/actions/workflows/playwright.yml/badge.svg)](https://github.com/shamilanazIT-QA/Playwright-Automation-Testing/actions/workflows/playwright.yml)
-
 # Playwright Automation Practice
-![Playwright Tests](PASTE_YOUR_BADGE_URL_HERE)
+![Playwright Tests][![Playwright Tests](https://github.com/shamilanazIT-QA/Playwright-Automation-Testing/actions/workflows/playwright.yml/badge.svg)](https://github.com/shamilanazIT-QA/Playwright-Automation-Testing/actions/workflows/playwright.yml)
 
 ## 📌 Project Overview
 This repository contains automated functional tests built with **Python** and **Playwright**. It demonstrates advanced automation techniques including handling multiple windows, alerts, and CI/CD integration.
