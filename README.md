@@ -1,12 +1,23 @@
 [![Playwright Tests](https://github.com/shamilanazIT-QA/Playwright-Automation-Testing/actions/workflows/playwright.yml/badge.svg)](https://github.com/shamilanazIT-QA/Playwright-Automation-Testing/actions/workflows/playwright.yml)
 
+# Playwright Automation Practice
+![Playwright Tests](PASTE_YOUR_BADGE_URL_HERE)
 
-## Playwright Automation Practice
-This project contains my automated test scripts using Playwright and Python.
-It includes tests for:
+## 📌 Project Overview
+This repository contains automated functional tests built with **Python** and **Playwright**. It demonstrates advanced automation techniques including handling multiple windows, alerts, and CI/CD integration.
 
-** Login functionality
+## 🛠️ Tech Stack
+* **Language:** Python
+* **Tool:** Playwright
+* **CI/CD:** GitHub Actions
+* **IDE:** PyCharm
 
-** Handling dynamic elements
+## 🚀 How to Run Locally
+1. Clone the repo: `git clone https://github.com/your-username/your-repo.git`
+2. Install dependencies: `pip install playwright`
+3. Install browsers: `playwright install`
+4. Run a script: `python scripts/multiple_windows.py`
 
-** Screenshot capture
+## 📂 Project Structure
+* `scripts/`: Contains individual test scripts for different scenarios.
+* `.github/workflows/`: Contains the CI/CD pipeline configuration.
