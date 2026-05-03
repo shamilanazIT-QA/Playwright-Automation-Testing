@@ -28,4 +28,4 @@ jobs:
 
     - name: Run Multiple Windows Test
       # This runs your specific script in the cloud!
-      run: python pages/test_windows_pom.py
+      run: python tests/test_windows_pom.py
