@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.getcwd()) # This tells Python to look in the current folder for your 'pages' folder
+
 from playwright.sync_api import sync_playwright
 from pages.window_page import WindowPage
 
