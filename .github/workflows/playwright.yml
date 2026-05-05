@@ -25,7 +25,22 @@ jobs:
 
     - name: Ensure browsers are installed
       run: playwright install --with-deps
-
     - name: Run Multiple Windows Test
-      # This runs your specific script in the cloud!
       run: python tests/test_windows_pom.py
+      env:
+        # This tells Playwright to save a report if we were using a test runner,
+        # but for now, we'll focus on the GitHub Artifact upload.
+        CI: true
+    - name: Upload Test Report
+      if: always() # This ensures the report is saved even if the test fails!
+      uses: actions/upload-artifact@v4
+      with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+
+
+
+
+

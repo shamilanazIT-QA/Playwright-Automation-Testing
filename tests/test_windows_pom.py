@@ -2,26 +2,32 @@ import sys
 import os
 sys.path.append(os.getcwd()) # This tells Python to look in the current folder for your 'pages' folder
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, expect  # Add 'expect' here
 from pages.window_page import WindowPage
-
 
 def test_multi_window():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)  # Ensure headless for GitHub
+        is_ci = os.getenv("CI") == "true"
+        browser = p.chromium.launch(headless=is_ci)
         context = browser.new_context()
         page = context.new_page()
 
-        # 1. Create the object (This now just stores the locators)
         window_tester = WindowPage(page)
-
-        # 2. Navigate (This puts the buttons on the screen)
         window_tester.navigate()
 
-        # 3. Click (Now Playwright can actually find the link!)
         new_tab = window_tester.click_new_window(context)
 
-        print(f"New tab title: {new_tab.title()}")
+        # --- THE ASSERTIONS ---
+        # 1. Assert the title is correct
+        expect(new_tab).to_have_title("New Window")
+
+        # 2. Assert the header text on the new page
+        header = new_tab.locator("h3")
+        expect(header).to_have_text("New Window")
+
+        print("Assertions passed successfully!")
         browser.close()
 
-test_multi_window()
+
+if __name__ == "__main__":
+    test_multi_window()
